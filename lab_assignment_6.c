@@ -1,7 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int search(int numbers[], int low, int high, int value) 
 {
+	int mid = (high + low)/2;
+	if (high >= low)
+	{
+		// if mid is in equal to value
+		if (numbers[mid] == value)
+			return numbers[mid];
+		
+		// checks the lower half
+		if (numbers[mid] > value)
+			return search(numbers, low, mid-1, value);
+		
+		// checks upper half
+		else
+			return search(numbers, mid + 1, high, value);
+	}
+	// if value not found in between lown and high
 	return -1;
 }
 
