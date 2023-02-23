@@ -8,7 +8,7 @@ int search(int numbers[], int low, int high, int value)
 	{
 		// if mid is in equal to value
 		if (numbers[mid] == value)
-			return numbers[mid];
+			return mid;
 		
 		// checks the lower half
 		if (numbers[mid] > value)
